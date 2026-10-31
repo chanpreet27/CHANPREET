@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chanpreet Singh — AI Researcher &amp; Product Builder</title>
+  <link href="css/fonts.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div class="noise" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- LOADER -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-name">Chanpreet Singh</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<button class="back-top" id="backTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a class="nav-logo" href="#hero">CS<span>.</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about"      onclick="closeMenu()">About</a></li>
+    <li><a href="#skills"     onclick="closeMenu()">Skills</a></li>
+    <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+    <li><a href="#projects"   onclick="closeMenu()">Projects</a></li>
+    <li><a href="#education"  onclick="closeMenu()">Education</a></li>
+    <li><a href="#contact"    onclick="closeMenu()">Contact</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="#contact" class="pill-btn">Get In Touch</a>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- FIXED THREE.JS DOTTED WAVE CANVAS — covers entire page -->
+<canvas id="dotted-canvas" aria-hidden="true"></canvas>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid"  aria-hidden="true"></div>
+  <div class="hero-glow"  aria-hidden="true" id="heroGlow"></div>
+
+
+  <div class="hero-inner">
+    <div class="hero-tag">
+      <span class="dot"></span>
+      Open to Collaborations · Delhi, India
+    </div>
+    <div>
+      <div class="hero-name-row">
+        <span class="hero-name-inner hero-name grad-text">CHANPREET</span>
+      </div>
+      <div class="hero-name-row">
+        <span class="hero-name-inner hero-name grad-text">SINGH</span>
+      </div>
+    </div>
+    <div class="hero-title-line">
+      <span class="hero-title" id="typedTitle"></span><span class="typed-cursor"></span>
+      <span class="hero-sep" aria-hidden="true"></span>
+    </div>
+    <div class="hero-bottom">
+      <p class="hero-desc">Exploring artificial intelligence, engineering intelligent systems, and building digital products — from retrieval research to experimental operating systems.</p>
+      <a href="#contact" class="pill-btn">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+        Get In Touch
+      </a>
+      <div class="hero-scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div id="marquee" aria-hidden="true">
+  <div class="marquee-track" id="track1"></div>
+  <div class="marquee-track reverse" id="track2"></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="reveal">
+      <div class="section-label">Who I Am</div>
+      <h2 class="section-heading grad-text">About Me</h2>
+    </div>
+    <p class="about-body reveal">
+      I'm <strong>Chanpreet Singh</strong>, a first-year <strong>B.Sc. (Hons.) Computer Science</strong> student at Sri Guru Gobind Singh College of Commerce, University of Delhi.
+      My interests lie in artificial intelligence, retrieval-augmented generation, AI systems, and building useful software products.
+    </p>
+    <p class="about-body reveal" style="margin-top:1.2rem;">
+      I have been exploring AI beyond conventional chatbot applications — from researching <strong>Iterative Loop Chunking</strong> for document retrieval to experimenting with operating systems, computer vision, automation, and AI-powered learning platforms.
+      I enjoy turning ideas into working prototypes, exploring how intelligent systems operate, and combining engineering with thoughtful digital product design.
+    </p>
+    <p class="about-body reveal" style="margin-top:1.2rem;">
+      Currently, I'm focused on strengthening my foundations in computer science, pursuing AI research, and building projects that solve meaningful problems.
+    </p>
+    <div class="about-stats reveal">
+      <div class="stat-card"><div class="stat-num" style="font-size:clamp(1.3rem,2.5vw,2rem)">AI &amp; RAG</div><div class="stat-label">Research Focus</div></div>
+      <div class="stat-card"><div class="stat-num" style="font-size:clamp(1.3rem,2.5vw,2rem)">2026</div><div class="stat-label">University Journey</div></div>
+      <div class="stat-card"><div class="stat-num" style="font-size:clamp(1.3rem,2.5vw,2rem)">10+</div><div class="stat-label">Independent Builds</div></div>
+    </div>
+    <a href="#contact" class="pill-btn reveal">Let's Collaborate</a>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="skills-inner">
+    <div class="section-label reveal">Expertise</div>
+    <h2 class="section-heading grad-text reveal">Skills</h2>
+    <div class="skills-grid" id="skillsGrid">
+      <div class="skill-category reveal">
+        <div class="skill-cat-label">AI &amp; Machine Learning</div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Python</span><span class="skill-pct">Working Knowledge</span></div><div class="skill-bar"><div class="skill-fill" data-pct="92"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">ML Fundamentals</span><span class="skill-pct">Practical Experience</span></div><div class="skill-bar"><div class="skill-fill" data-pct="84"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Retrieval-Augmented Gen</span><span class="skill-pct">Research Focus</span></div><div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Natural Language Processing</span><span class="skill-pct">Practical Experience</span></div><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Computer Vision</span><span class="skill-pct">Exploring</span></div><div class="skill-bar"><div class="skill-fill" data-pct="75"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Embeddings &amp; Vector Search</span><span class="skill-pct">Working Knowledge</span></div><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">AI Model Evaluation</span><span class="skill-pct">Practical Experience</span></div><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div></div>
+      </div>
+      <div class="skill-category reveal">
+        <div class="skill-cat-label">LLMs &amp; AI Systems</div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">LLM APIs (Gemini, Ollama)</span><span class="skill-pct">Working Knowledge</span></div><div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Prompt Engineering</span><span class="skill-pct">Practical Experience</span></div><div class="skill-bar"><div class="skill-fill" data-pct="92"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">RAG Architecture</span><span class="skill-pct">Research Focus</span></div><div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">RAGAS Evaluation</span><span class="skill-pct">Research Focus</span></div><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Document Pipelines</span><span class="skill-pct">Working Knowledge</span></div><div class="skill-bar"><div class="skill-fill" data-pct="84"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">AI Agents &amp; Automation</span><span class="skill-pct">Practical Experience</span></div><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Multimodal AI Systems</span><span class="skill-pct">Exploring</span></div><div class="skill-bar"><div class="skill-fill" data-pct="76"></div></div></div>
+      </div>
+      <div class="skill-category reveal">
+        <div class="skill-cat-label">Web Development</div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">HTML / CSS / JavaScript</span><span class="skill-pct">Working Knowledge</span></div><div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">React &amp; TypeScript</span><span class="skill-pct">Practical Experience</span></div><div class="skill-bar"><div class="skill-fill" data-pct="84"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Responsive UI &amp; Styling</span><span class="skill-pct">Working Knowledge</span></div><div class="skill-bar"><div class="skill-fill" data-pct="86"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">API Integration</span><span class="skill-pct">Practical Experience</span></div><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Product Prototyping</span><span class="skill-pct">Working Knowledge</span></div><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">UI/UX Design</span><span class="skill-pct">Practical Experience</span></div><div class="skill-bar"><div class="skill-fill" data-pct="78"></div></div></div>
+      </div>
+      <div class="skill-category reveal">
+        <div class="skill-cat-label">Tools &amp; Platforms</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Git / GitHub</span><span class="skill-tag">VS Code</span><span class="skill-tag">Google AI Studio</span>
+          <span class="skill-tag">Gemini API</span><span class="skill-tag">Ollama Cloud</span><span class="skill-tag">Hugging Face</span>
+          <span class="skill-tag">Antigravity</span><span class="skill-tag">Lovable</span><span class="skill-tag">Google Stitch</span>
+          <span class="skill-tag">Supabase</span><span class="skill-tag">Vercel</span><span class="skill-tag">Ubuntu / WSL</span>
+          <span class="skill-tag">QEMU</span><span class="skill-tag">RAGAS</span><span class="skill-tag">n8n</span>
+          <span class="skill-tag">Playwright</span><span class="skill-tag">Maxima</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="exp-inner">
+    <div class="section-label reveal">Career &amp; Research Path</div>
+    <h2 class="section-heading grad-text reveal">Experience</h2>
+    <div class="timeline">
+      <div class="exp-item reveal">
+        <div class="exp-meta"><span class="exp-period">2025 – Present</span><span class="exp-type">Independent</span></div>
+        <div class="exp-role">Independent AI &amp; Software Builder</div>
+        <div class="exp-company">Independent Projects · <span>Delhi, India</span></div>
+        <div class="exp-desc">Designing and developing AI-focused software prototypes, web applications, and experimental systems. My work includes conversational AI platforms, computer vision applications, workflow automation, and product interface development.</div>
+        <div class="exp-tags"><span class="skill-tag">Python</span><span class="skill-tag">JavaScript</span><span class="skill-tag">React</span><span class="skill-tag">AI APIs</span><span class="skill-tag">Git</span><span class="skill-tag">Lovable</span></div>
+      </div>
+      <div class="exp-item reveal">
+        <div class="exp-meta"><span class="exp-period">2026 – Present</span><span class="exp-type">Research in Progress</span></div>
+        <div class="exp-role">RAG Research &amp; Experimentation</div>
+        <div class="exp-company">Independent / Academic Research Project · <span>University of Delhi</span></div>
+        <div class="exp-desc">Exploring Iterative Loop Chunking as an approach to document retrieval in Retrieval-Augmented Generation systems. Designing pipelines for document transformation, chunking, embedding, retrieval, and evaluation. Comparing fixed, semantic, and iterative chunking strategies.</div>
+        <div class="exp-tags"><span class="skill-tag">Python</span><span class="skill-tag">RAG</span><span class="skill-tag">RAGAS</span><span class="skill-tag">Gemini API</span><span class="skill-tag">Ollama Cloud</span><span class="skill-tag">Embeddings</span></div>
+      </div>
+      <div class="exp-item reveal">
+        <div class="exp-meta"><span class="exp-period">2026 – Present</span><span class="exp-type">Student Activities</span></div>
+        <div class="exp-role">Developer Community &amp; Technical Activities</div>
+        <div class="exp-company">University of Delhi / Student Activities · <span>Delhi, India</span></div>
+        <div class="exp-desc">Participating in developer communities, student technical activities, hackathon preparation, and collaborative technology initiatives, including GDG membership and AI-oriented project development.</div>
+        <div class="exp-tags"><span class="skill-tag">GDG</span><span class="skill-tag">Hackathons</span><span class="skill-tag">Community</span><span class="skill-tag">Open Source</span></div>
+      </div>
+      <div class="exp-item reveal">
+        <div class="exp-meta"><span class="exp-period">2025 – 2026</span><span class="exp-type">Job Simulations</span></div>
+        <div class="exp-role">Industry Learning &amp; Virtual Job Simulations</div>
+        <div class="exp-company">Tata · Deloitte · AWS · Google for Startups · <span>Online</span></div>
+        <div class="exp-desc">Completed structured virtual job simulations and technical training covering Generative AI Engineering &amp; Data Analytics (Tata), Data Analytics (Deloitte), Solutions Architecture (AWS), and Prompt Engineering (Google for Startups).</div>
+        <div class="exp-tags"><span class="skill-tag">Generative AI</span><span class="skill-tag">Data Analytics</span><span class="skill-tag">Cloud Architecture</span><span class="skill-tag">Prompt Engineering</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="projects-inner">
+    <div class="section-label reveal" style="color:#0C0C0C;opacity:.4">Selected Work</div>
+    <h2 class="section-heading reveal" style="color:#0C0C0C">Projects</h2>
+    <div class="projects-grid">
+      <!-- 01 CS.AI -->
+      <div class="proj-card reveal">
+        <div class="proj-img">
+          <div class="proj-img-inner"></div>
+          <span class="proj-emoji">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span class="proj-num">01</span><span class="proj-badge live">Evolving Product</span></div>
+          <div class="proj-title">CS.AI — Intelligent Academic Assistant</div>
+          <div class="proj-desc">An AI-powered academic assistance platform designed around student learning. Explores conversational assistance, multilingual interaction, voice capabilities, image and diagram support, and educational workflows within a modern interface.</div>
+          <div class="proj-stack"><span class="proj-tech">Gemini API</span><span class="proj-tech">JavaScript</span><span class="proj-tech">React</span><span class="proj-tech">Lovable</span><span class="proj-tech">AI Integration</span></div>
+          <a href="https://csai-cs.lovable.app" target="_blank" rel="noopener" class="proj-link">View Platform <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <!-- 02 ILC Research -->
+      <div class="proj-card reveal">
+        <div class="proj-img">
+          <div class="proj-img-inner"></div>
+          <span class="proj-emoji">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          </span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span class="proj-num">02</span><span class="proj-badge research">Research in Progress</span></div>
+          <div class="proj-title">Iterative Loop Chunking (ILC) — RAG Research</div>
+          <div class="proj-desc">An experimental Retrieval-Augmented Generation framework comparing fixed, semantic, and iterative loop chunking. Investigates document transformation, structured Markdown preparation, reverse distillation, vector retrieval, and answer evaluation with RAGAS.</div>
+          <div class="proj-stack"><span class="proj-tech">Python</span><span class="proj-tech">RAGAS</span><span class="proj-tech">LLMs</span><span class="proj-tech">Embeddings</span><span class="proj-tech">Gemini API</span><span class="proj-tech">Ollama Cloud</span></div>
+          <span class="proj-status-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Research in Progress</span>
+        </div>
+      </div>
+      <!-- 03 180.OS -->
+      <div class="proj-card reveal">
+        <div class="proj-img">
+          <div class="proj-img-inner"></div>
+          <span class="proj-emoji">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l3 3-3 3M13 14h4"/></svg>
+          </span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span class="proj-num">03</span><span class="proj-badge wip">Experimental</span></div>
+          <div class="proj-title">180.OS — Experimental Operating System</div>
+          <div class="proj-desc">An experimental operating-system project exploring low-level computing concepts, kernel development, virtualization, and system design. Features a visual identity and interactive product website.</div>
+          <div class="proj-stack"><span class="proj-tech">Low-Level Computing</span><span class="proj-tech">Ubuntu</span><span class="proj-tech">WSL</span><span class="proj-tech">QEMU</span><span class="proj-tech">System Design</span></div>
+          <a href="https://chanpreet27.github.io/180.OS/" target="_blank" rel="noopener" class="proj-link">View Website <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <!-- 04 Traffic Mind AI -->
+      <div class="proj-card reveal">
+        <div class="proj-img">
+          <div class="proj-img-inner"></div>
+          <span class="proj-emoji">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="3"/><circle cx="12" cy="6" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="18" r="2"/></svg>
+          </span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span class="proj-num">04</span><span class="proj-badge live">Hackathon Prototype</span></div>
+          <div class="proj-title">Traffic Mind AI — Intelligent Traffic Management</div>
+          <div class="proj-desc">An AI-assisted traffic management prototype exploring adaptive signal decisions, emergency vehicle priority, traffic image analysis, and congestion-aware signal control (HackCBS preparation).</div>
+          <div class="proj-stack"><span class="proj-tech">Python</span><span class="proj-tech">Computer Vision</span><span class="proj-tech">Vehicle Detection</span><span class="proj-tech">AI Integration</span><span class="proj-tech">Web UI</span></div>
+          <a href="https://frontend-xi-olive-19.vercel.app/" target="_blank" rel="noopener" class="proj-link">View Prototype <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <!-- 05 Write a Content -->
+      <div class="proj-card reveal">
+        <div class="proj-img">
+          <div class="proj-img-inner"></div>
+          <span class="proj-emoji">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span class="proj-num">05</span><span class="proj-badge live">In Development</span></div>
+          <div class="proj-title">Write a Content — AI Content Transformation</div>
+          <div class="proj-desc">An emerging generative AI platform exploring automated content transformation, content creation workflows, and structured digital publishing with a strong emphasis on usable product design.</div>
+          <div class="proj-stack"><span class="proj-tech">Generative AI</span><span class="proj-tech">Frontend Development</span><span class="proj-tech">Automation</span><span class="proj-tech">UI/UX</span></div>
+          <a href="https://writeacontent.com" target="_blank" rel="noopener" class="proj-link">View Platform <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <!-- 06 StegoVault -->
+      <div class="proj-card reveal">
+        <div class="proj-img">
+          <div class="proj-img-inner"></div>
+          <span class="proj-emoji">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="12" cy="16" r="1.5"/></svg>
+          </span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span class="proj-num">06</span><span class="proj-badge wip">Working Prototype</span></div>
+          <div class="proj-title">StegoVault — Text Steganography Application</div>
+          <div class="proj-desc">A desktop application exploring text-based steganography, enabling information to be concealed within text-based content through a dedicated interface for cybersecurity exploration.</div>
+          <div class="proj-stack"><span class="proj-tech">Python</span><span class="proj-tech">Desktop UI</span><span class="proj-tech">Steganography</span><span class="proj-tech">Cybersecurity</span></div>
+          <span class="proj-status-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Working Prototype</span>
+        </div>
+      </div>
+      <!-- 07 ContentFlow AI -->
+      <div class="proj-card reveal">
+        <div class="proj-img">
+          <div class="proj-img-inner"></div>
+          <span class="proj-emoji">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          </span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span class="proj-num">07</span><span class="proj-badge live">ChatGPT Plugin</span></div>
+          <div class="proj-title">ContentFlow AI — Editorial Automation</div>
+          <div class="proj-desc">An AI-assisted editorial workflow plugin for researching and preparing technology articles and corresponding LinkedIn content, with human-in-the-loop review before publication.</div>
+          <div class="proj-stack"><span class="proj-tech">LLMs</span><span class="proj-tech">Automation</span><span class="proj-tech">Content Workflows</span><span class="proj-tech">ChatGPT Plugin API</span></div>
+          <a href="https://chatgpt.com/plugins/plugins_6ae4c6c7cc84819182c9eb0b4ecf5961" target="_blank" rel="noopener" class="proj-link">View Plugin <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <!-- 08 CS Academy -->
+      <div class="proj-card reveal">
+        <div class="proj-img">
+          <div class="proj-img-inner"></div>
+          <span class="proj-emoji">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          </span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span class="proj-num">08</span><span class="proj-badge wip">Independent Project</span></div>
+          <div class="proj-title">CS Academy — Educational Learning Platform</div>
+          <div class="proj-desc">An educational platform concept for making study materials, academic resources, tests, and guided learning content more accessible to students across classes.</div>
+          <div class="proj-stack"><span class="proj-tech">Web Development</span><span class="proj-tech">Educational Technology</span><span class="proj-tech">AI Integration</span></div>
+          <span class="proj-status-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Concept Prototype</span>
+        </div>
+      </div>
+      <!-- 09 Sign Language Camera -->
+      <div class="proj-card reveal">
+        <div class="proj-img">
+          <div class="proj-img-inner"></div>
+          <span class="proj-emoji">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          </span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span class="proj-num">09</span><span class="proj-badge wip">Experimental</span></div>
+          <div class="proj-title">Sign Language Camera — Computer Vision Experiment</div>
+          <div class="proj-desc">A camera-based computer vision experiment exploring hand landmark detection and the translation of sign gestures into readable or spoken output.</div>
+          <div class="proj-stack"><span class="proj-tech">Python</span><span class="proj-tech">Computer Vision</span><span class="proj-tech">Hand Tracking</span><span class="proj-tech">OpenCV</span></div>
+          <span class="proj-status-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Experimental Prototype</span>
+        </div>
+      </div>
+      <!-- 10 CS Store -->
+      <div class="proj-card reveal">
+        <div class="proj-img">
+          <div class="proj-img-inner"></div>
+          <span class="proj-emoji">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+          </span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span class="proj-num">10</span><span class="proj-badge wip">Prototype</span></div>
+          <div class="proj-title">CS Store — Digital eBook Marketplace</div>
+          <div class="proj-desc">A lightweight digital bookstore prototype with browsing, search, shopping interactions, and access-controlled educational resources.</div>
+          <div class="proj-stack"><span class="proj-tech">HTML</span><span class="proj-tech">CSS</span><span class="proj-tech">JavaScript</span><span class="proj-tech">UI Design</span></div>
+          <span class="proj-status-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Prototype</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="edu-inner">
+    <div class="section-label reveal">Academic Background</div>
+    <h2 class="section-heading grad-text reveal">Education</h2>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="edu-year">2026 – Present</div>
+        <div class="edu-degree">B.Sc. (Hons.) in Computer Science</div>
+        <div class="edu-school">Sri Guru Gobind Singh College of Commerce · University of Delhi</div>
+        <div class="edu-detail">First-year undergraduate student. Core focus areas include Computer Science Fundamentals, Programming, Computer System Architecture, Mathematics for Computing, and Software Development.</div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-year">2024 – 2025</div>
+        <div class="edu-degree">Class XII — Commerce with Mathematics</div>
+        <div class="edu-school">Guru Angad Public School · Delhi, India</div>
+        <div class="edu-detail">Completed senior secondary education focusing on Mathematics, business analytics, and quantitative problem-solving.</div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-year">2025 – 2026</div>
+        <div class="edu-degree">Virtual Job Simulations</div>
+        <div class="edu-school">Tata · Deloitte · AWS</div>
+        <div class="edu-detail">Completed simulated industry projects in Generative AI Engineering &amp; Data Analytics (Tata), Data Analytics (Deloitte), and Cloud Solutions Architecture (AWS).</div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-year">2025 – 2026</div>
+        <div class="edu-degree">Specialized AI Learning</div>
+        <div class="edu-school">Google for Startups · Developer Communities</div>
+        <div class="edu-detail">Technical study on prompt engineering patterns, context window utilization, chain-of-thought workflows, and LLM API integrations.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="ach-inner">
+    <div class="section-label reveal">Highlights</div>
+    <h2 class="section-heading grad-text reveal">Achievements</h2>
+    <div class="ach-grid">
+      <div class="ach-item reveal">
+        <span class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+        <div class="ach-text"><strong>University Admission</strong>Admitted to B.Sc. (Hons.) Computer Science at Sri Guru Gobind Singh College of Commerce, University of Delhi, in 2026.</div>
+      </div>
+      <div class="ach-item reveal">
+        <span class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></span>
+        <div class="ach-text"><strong>GDG Recognition</strong>Participated in Google Developer Group community activities and received a certificate of appreciation for active participation.</div>
+      </div>
+      <div class="ach-item reveal">
+        <span class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+        <div class="ach-text"><strong>Hackathon Prototyping</strong>Engineered AI-assisted hackathon concepts and prototypes, including Traffic Mind AI for adaptive signals and emergency vehicle priority.</div>
+      </div>
+      <div class="ach-item reveal">
+        <span class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18h6M10 22h4M12 2a7 7 0 00-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 001 1h6a1 1 0 001-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 00-7-7z"/></svg></span>
+        <div class="ach-text"><strong>Infinity AI Hackathon</strong>Designed an inclusive AI hackathon format featuring online idea submission via Unstop followed by a four-hour offline buildathon.</div>
+      </div>
+      <div class="ach-item reveal">
+        <span class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+        <div class="ach-text"><strong>Industry Learning</strong>Completed structured technical learning and virtual job simulations with Tata, Deloitte, AWS, and Google for Startups.</div>
+      </div>
+      <div class="ach-item reveal">
+        <span class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+        <div class="ach-text"><strong>RAG Research Initiative</strong>Developing an experimental framework to study chunking approaches, document retrieval, and answer evaluation in RAG systems.</div>
+      </div>
+      <div class="ach-item reveal">
+        <span class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span>
+        <div class="ach-text"><strong>Community Growth</strong>Building an online professional presence through technical projects, documentation, and LinkedIn engagement with over 1,000 connections.</div>
+      </div>
+      <div class="ach-item reveal">
+        <span class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+        <div class="ach-text"><strong>Independent Product Builds</strong>Built and experimented with 10+ software, AI, computer vision, and systems projects while pursuing undergraduate computer science studies.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-label reveal" style="color:#0C0C0C;opacity:.4;justify-content:center">Let's Work Together</div>
+    <h2 class="section-heading reveal" style="color:#0C0C0C">Let's Build Something Meaningful.</h2>
+    <p class="contact-sub reveal">I'm open to research collaborations, student developer opportunities, AI projects, hackathons, and conversations about interesting technology.</p>
+    <a href="mailto:chanpreet.27@gmail.com" class="contact-email reveal">chanpreet.27@gmail.com</a>
+    <div class="social-links reveal">
+      <a href="https://www.linkedin.com/in/chanpreet-singh7-79969b379" target="_blank" rel="noopener" class="social-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn
+      </a>
+      <a href="https://github.com/chanpreet27" target="_blank" rel="noopener" class="social-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>GitHub
+      </a>
+      <a href="https://medium.com/@chanpreet.27" target="_blank" rel="noopener" class="social-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>Medium
+      </a>
+      <a href="https://www.instagram.com/chanpreet_singh27/" target="_blank" rel="noopener" class="social-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram
+      </a>
+    </div>
+    <a href="mailto:chanpreet.27@gmail.com" class="pill-btn reveal">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+      Send a Message
+    </a>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-copy">© 2026 Chanpreet Singh · Delhi, India</span>
+  <span class="footer-right">Chanpreet Singh · Computer Science Student · AI Research &amp; Independent Projects</span>
+</footer>
+
+<script src="js/script-1.js"></script>
+
+<script src="js/three.min.js"></script>
+<script src="js/script-2.js"></script>
+
+</body>
+</html>
